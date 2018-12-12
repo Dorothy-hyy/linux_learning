@@ -245,10 +245,56 @@ easiler than vi..
         * -newer file  Find files that are newer than  file.
         * -exec command {}\;   Run command against all the files that are found. (eg: find . -exec file {} \;)
 
-## 
+## sort
+* sort file
+    * Options
+        * -k F  Sort by key. F is the field number (eg, sort -u -k2 filename)
+        * -r  Sort in reverse order
+        * -u  Sort unique.
+ 
+## Creating a collection of Files
+* tar [-] c|x|t f tarfile [pattern]  Create, extract or list contents of a tar archive using pattern, if supplied.
+    * Options
+        * c  Create a tar archive
+        * x  Extract files from the archive
+        * t  Display the table of contents(list)
+        * v  Be verbose
+        * z  Use compression
+        * f file   Use this file
+
+## Compressing Files to Save Space
+* gzip  Compress files.
+* gunzip  Uncompress files
+* gzcat  Concatenates compressed files
+* zcat  Concatenates compressed files.
+
+## Disk Usage
+* du  Estimates file usage
+* du -k  Display sizes in Kilobytes
+* du -h  Display sizes in human readable format.
 
 
+## Wildcards
+* "*"  matches zero or more characters
+* ?   matches exactly one character*
+* []  A character class. (eg, ca[nt]?)
+* [!]  Matches any of the characters NOT included between the brackets. Matches exactly one character. (eg, [!aeiou])
+* Use two characters separated by a hyphen to create a range in a character class.(eg, [a-g])
+* Named Character Classes
+    * [[:alpha:]] matches alphabetic letters. (Both lower and upper cases)
+    * [[:alnum:]] matches alphanumeric letters. (Any upper or lower  and digit)
+    * [[:digit:]] 
+    * [[:lower:]]
+    * [[:space:]] white space.
+    * [[:upper:]]
 
+* Matching Wildcard patterns
+    * \  escpae character. Use if you want to match a wildcard character.
+        * match all files that end with a question mark:
+            * "*\?"
+            
+## Redirection
+* >  Redirects standard output to a file. Overwrites (truncating) existing 
 
 
 
