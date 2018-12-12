@@ -172,4 +172,86 @@ chmod 400 my-cat
             * setgid
             * sticky
         * **touch** either create a file if not exist, or update the timestamp of the file
+
+## Displaying the Content of File:
+* displaying content:
+    ![display](assets/markdown-img-paste-20181211191905570.png)
+
+* head: first 10 lines
+* tail: last 10 lines
+* tail -1 file.txt: only last line
+* tail -f file.txt: view as the file grows, eg log file.
+
+## Nano Editor:
+easiler than vi..
+
+## Vi Editor:
+* cheat sheet:
+![](assets/markdown-img-paste-20181211200406643.png)
+* turn on line numbering:
+   ```
+    :set nu
+   ```
+* turn off line numbering:
+    ```
+    :set nonu
+
+    ```
+* Repeating command: <number><command>:
+    * 5k: move up a line 5 times
+    * 80i<Text><ESC> = Insert <Text> 80 times
+    * 80i_<ESC> = Insert 90 "_" characters.
+
+* Deleting Text:
+    * x Delete a character
+    * dw Delete a word 
+    * dd Delete a line
+    * D Delete from the current position.
+
+* Changing Text:
+    * r Replace the current character
+    * cw Change the current word.
+    * cc Change the current line 
+    * c$ CHange the text from the current position.
+    * C Same as C$
+    * ~ Reverses the case of a character
+    
+* Copying and Pasting
+    * yy Yank(copy) the current line
+    * y<position> Yank the <position>
+    * p Paste the most recent deleted or yanked text.
+
+* Undo and Redo:
+    * u Undo
+    * Ctrl-R Redo
+
+
+* Searching:
+    * /<pattern> Start a forward searching 
+    * ?<pattern> Start a reverse searching
+
+
+## Emacs Editor
 * 
+
+## Find File:
+* find [path..] [expression]
+    * Options:
+        * -name pattern  Find files and directories that match pattern.
+        * -iname pattern  Like -name, but ignore case.
+        * -ls  Performs an ls on each of the found items. (eg: find / README.md -ls)
+        * -mtime days  Find files that are days old.
+        * -size num  FInds file that are of size num.
+        * -newer file  Find files that are newer than  file.
+        * -exec command {}\;   Run command against all the files that are found. (eg: find . -exec file {} \;)
+
+## 
+
+
+
+
+
+
+
+
+diaplay
