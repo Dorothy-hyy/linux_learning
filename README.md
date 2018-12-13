@@ -294,10 +294,59 @@ easiler than vi..
             * "*\?"
             
 ## Redirection
-* >  Redirects standard output to a file. Overwrites (truncating) existing 
+* >  Redirects standard output to a file. Overwrites (truncating) existing contents. 
+* >>  Redirects standard output to a file. Appends to any existing contents.
+* <  Redirects input from a file to a command.
+* &  Used with redirection to signal that a file descriptor is being used.
+* 2>&1  Combine stderr and standard output.
+* 2>file  Redirect standard error to a file.
+* >/dev/null  Redirect output to nowhere
+
+
+## Comparing the contents of Files
+* diff file1 file2  Compare two files.
+* sdiff file1 file2  Side-by-side comparison.
+* vimdiff file1 file2  Highlight differences in vim.
+    * output: eg. 3c3; where the first "3" is the line number of first file, and so as the second "3".
+    * LineNumFile1 - Action - LineNumFile2
+        * Action = (A)dd(C)hange(D)elete
+    * in vimdiff: 
+        * ctrl-w w   Go to the next window
+        * :q    Quit current window
+        * :qa   Quit all
+
+## Searching in FIles and Using Pipes
+* grep  Display lines matching a pattern
+    * grep pattern file
+        * Options
+            * -i  Perform a search, ignoring case.
+            * -c  Count the number of occurrences in a file
+            * -n  Precede output with line numbers.
+            * -v  Invert Match. Print lines that don't match.
+
+* file  file_name  Display the file type.
+
+* strings  Display printable strings
+* |    Pipe symbool
+    * command-output  |  command-input
+    * eg.  cat file | grep patter
+
+* cut [file]   Cut out selected portions of file. If file is omitted, use standard input.
+    * Options
+        * -d delimiter  Use delimiter as the field separator
+        * -f N  Display the Nth field.
+        * eg. cut -d' ' -f2,5
+* tr  Translate character. (eg, tr ":" " "  translate ":" to " "
+* column -t   Show in table format
+
+
+## Copying FIles over the Network
+* SCP - Secure copy
+* SFTP - SSH file transfer protocol
+
+* scp source destination   Copy source to destination
+* sftp host      Start a secure file transfer session with host.
+* ftp           Start a file transfer session with host.
 
 
 
-
-
-diaplay
