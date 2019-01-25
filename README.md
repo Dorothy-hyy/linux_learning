@@ -395,11 +395,37 @@ easiler than vi..
     * jobs %%   Current job
     * jobs %+   Current job
     * jobs %-   Previous job
- 
+
 # Killing Processes
 * Ctrl-c
 * kill [-sig] pid    Send a signal to a process
 * kill -l            Display a list of signals
 
 * eg kill signal is 9. So: kill -9 123
- 
+
+# Crontab
+* A time based job scheduling service.
+## Crontab Format
+crontab Format![](assets/markdown-img-paste-20190125171239898.png)
+* examples:
+crontab example 1![](assets/markdown-img-paste-20190125171709166.png)
+
+crontab example 2![](assets/markdown-img-paste-20190125173004395.png)
+
+* Redirecting output:
+redirecting![](assets/markdown-img-paste-20190125172903256.png)
+
+* shortcuts
+crontabShortcuts![](assets/markdown-img-paste-20190125214332947.png)
+
+* run crontab:
+    * vim my-cron
+        * 0 7 * * 1 /weekly-report
+    * crontab file_name
+
+* list cron jobs:
+    * crontab -l
+* edit cron jobs:
+    * crontab -e
+* remove all of your cron jobs
+    * crontab -r
