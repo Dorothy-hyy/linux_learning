@@ -429,3 +429,72 @@ crontabShortcuts![](assets/markdown-img-paste-20190125214332947.png)
     * crontab -e
 * remove all of your cron jobs
     * crontab -r
+
+# Switching Users and Running Commands as Others
+* su [username]  Change user ID or become superuser
+* options:
+    * -           A hyphen is used to provide an environment similar to what the user would expect had the user logged in directly.
+    * -c command  Specify a command to be executed.
+* whoami
+* Sudo
+    * option:
+        * sudo Option![](assets/markdown-img-paste-20190125231924407.png)
+        * sudo with su![](assets/markdown-img-paste-20190125232141977.png)
+
+# Shell History and Tab Completion
+* Shell history is stored in memory and on disk.
+    * ~/.bash_history
+    * ~/.history
+    * ~/.histfile
+* history   Displays the shell history
+* HISTSIZE  Controls the number of commands to retain in history (usually up to 500)
+    * export HISTSIZE=1000     customize the HISTSIZE
+* ! Syntax
+    * !N      Repeat command line number N
+    * !!      Repeat the previous command line
+    * !string   Repeat the most recengt command starting with "string"
+    * !:N <Event> <Separator> <Word>
+        * !        Repeat a command line (or event).
+            * ! = The most recent command line.
+            * ! = !!
+        * :N      Represents a word on the command line.
+            * 0 = command, 1 = first argument, etc
+    * !^      Represents the first argument.
+        * !^  = !:1
+    * !$     Represents the last argument
+    * eg: head files.txt sorted_files.txt notes.txt
+        * !^ = files.txt
+        * !$ = notes.txt
+## Searching Shell history
+* Ctrl-r   Reverse shell history search
+* Enter    Execute the command
+* Arrows   Change the command
+* Ctrl-g   Cancel the search
+
+
+# Install Softwares  (Package Manager)
+## RPM Distros (Linux)
+### yum:
+* yum search string             Search for string
+* yum info [package]            Display info
+* yum install [-y] package      Install package
+* yum remove package            Remove package
+
+### rpm
+* rpm -ql package             List package's files
+* rpm -ivh package.rpm        Install package
+* rpm -e package              Erase (uninstall) package
+
+## DEB Distros (Debian)
+### APT - Advanced Packaging Tool
+* apt-cache search string        Search for string.
+* apt-get install [-y] package   Install package.  (-y, automatically answer "yes")
+* apt-get remove package         Remove package, leaving configuration.
+* apt-get purge package          Remove package, deleting configuration
+* apt-cache show package         Display information about package.
+
+### dpkg
+* dpkg -l                     List installed packages
+* dpkg -S /path/to/file       List file's package.
+* dpkg -L package             List all files in package.
+* dpkg -i package.deb         install package
