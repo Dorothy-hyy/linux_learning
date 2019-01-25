@@ -204,18 +204,18 @@ easiler than vi..
 
 * Deleting Text:
     * x Delete a character
-    * dw Delete a word 
+    * dw Delete a word
     * dd Delete a line
     * D Delete from the current position.
 
 * Changing Text:
     * r Replace the current character
     * cw Change the current word.
-    * cc Change the current line 
+    * cc Change the current line
     * c$ CHange the text from the current position.
     * C Same as C$
     * ~ Reverses the case of a character
-    
+
 * Copying and Pasting
     * yy Yank(copy) the current line
     * y<position> Yank the <position>
@@ -227,12 +227,12 @@ easiler than vi..
 
 
 * Searching:
-    * /<pattern> Start a forward searching 
+    * /<pattern> Start a forward searching
     * ?<pattern> Start a reverse searching
 
 
 ## Emacs Editor
-* 
+*
 
 ## Find File:
 * find [path..] [expression]
@@ -251,7 +251,7 @@ easiler than vi..
         * -k F  Sort by key. F is the field number (eg, sort -u -k2 filename)
         * -r  Sort in reverse order
         * -u  Sort unique.
- 
+
 ## Creating a collection of Files
 * tar [-] c|x|t f tarfile [pattern]  Create, extract or list contents of a tar archive using pattern, if supplied.
     * Options
@@ -283,7 +283,7 @@ easiler than vi..
 * Named Character Classes
     * [[:alpha:]] matches alphabetic letters. (Both lower and upper cases)
     * [[:alnum:]] matches alphanumeric letters. (Any upper or lower  and digit)
-    * [[:digit:]] 
+    * [[:digit:]]
     * [[:lower:]]
     * [[:space:]] white space.
     * [[:upper:]]
@@ -292,9 +292,9 @@ easiler than vi..
     * \  escpae character. Use if you want to match a wildcard character.
         * match all files that end with a question mark:
             * "*\?"
-            
+
 ## Redirection
-* >  Redirects standard output to a file. Overwrites (truncating) existing contents. 
+* >  Redirects standard output to a file. Overwrites (truncating) existing contents.
 * >>  Redirects standard output to a file. Appends to any existing contents.
 * <  Redirects input from a file to a command.
 * &  Used with redirection to signal that a file descriptor is being used.
@@ -310,7 +310,7 @@ easiler than vi..
     * output: eg. 3c3; where the first "3" is the line number of first file, and so as the second "3".
     * LineNumFile1 - Action - LineNumFile2
         * Action = (A)dd(C)hange(D)elete
-    * in vimdiff: 
+    * in vimdiff:
         * ctrl-w w   Go to the next window
         * :q    Quit current window
         * :qa   Quit all
@@ -348,5 +348,58 @@ easiler than vi..
 * sftp host      Start a secure file transfer session with host.
 * ftp           Start a file transfer session with host.
 
+## Environment Variables
+* printenv
+    * printenv HOME
+    * printenv home
+* echo $HOME
+    * echo $home
+
+### Creating Environment Variables
+* export VAR="value"
+    * export EDITOR="vi"
+    * do not inclue space around "="
+    * export TZ="US/Pacific"
+### Removing Environment Variables
+* unset VAR
+    * unset TZ
+### Persisting Environment Variables
+* cat ~/.bash_profile
+* export TZ="US/Central"
 
 
+## Processes and job control
+* ps Display process status
+    * -e  Everything, all processes
+    * -f  Full format listing
+    * -u username  Display username's processes
+    * -p pid  Display information for PID
+
+    * -ef  Display all processes, full
+    * -eH  Display a process tree.
+    * -e --forest  DIsplay a process tree
+    * -u username  DIsplay user's processes.
+* pstree  Display processes in a tree format
+* top     Interactive process viewer
+* htop    Interactive process viewer.
+
+# Background and Foreground Processes
+* command &    STart command in background
+* Ctrl-c       Kill the foreground process
+* Ctrl-z       Suspend the foreground process.
+
+* bg [%num]    Background a suspended process
+* fg [%num]    Forground a background process
+* kill         Kill a process by job number or PID
+* jobs [%num]  List jobs.
+    * jobs %%   Current job
+    * jobs %+   Current job
+    * jobs %-   Previous job
+ 
+# Killing Processes
+* Ctrl-c
+* kill [-sig] pid    Send a signal to a process
+* kill -l            Display a list of signals
+
+* eg kill signal is 9. So: kill -9 123
+ 
